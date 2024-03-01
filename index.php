@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div id="articles">
                 <?php
                 // Afficher les articles existants depuis le fichier texte :)
-                $articles = file('articles.txt');
+                $articles = array_reverse(file('articles.txt'));
                 foreach ($articles as $article) {
                     list($title, $content) = explode('|', $article);
                
